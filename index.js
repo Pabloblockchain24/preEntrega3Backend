@@ -8,14 +8,14 @@ const __dirname = path.dirname(__filename);
 import cookieParser from "cookie-parser";
 import {engine} from "express-handlebars"
 
-import productRouter from "./routes/products.router.js"
-import cartRouter from "./routes/carts.router.js"
-import userRouter from "./routes/users.router.js"
-import sessionRouter from "./routes/sessions.router.js"
-import messageRouter from "./routes/message.router.js"
+import productRouter from "./src/routes/products.router.js"
+import cartRouter from "./src/routes/carts.router.js"
+import userRouter from "./src/routes/users.router.js"
+import sessionRouter from "./src/routes/sessions.router.js"
+import messageRouter from "./src/routes/message.router.js"
 
 
-import config from "./config/config.js"
+import config from "./src/config/config.js"
 
 const app = express()
 app.use(express.json())
@@ -24,7 +24,7 @@ app.use(express.urlencoded({ extended: true }))
 
 app.engine("handlebars", engine())
 app.set("view engine", "handlebars")
-app.set("views", path.resolve(__dirname + "/views"))
+app.set("views", path.resolve(__dirname + "/src/views"))
  
 
 // en el archivo .env tenemos => PORT = 8080
